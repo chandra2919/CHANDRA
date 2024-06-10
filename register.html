@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('healthy-autumn-still-life-fresh-organic-vegetables-generated-by-ai.jpg');
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 50px 10px 100px;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            color: #333;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: -50px;
+        }
+
+        .login-container h3 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #060404;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .login-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #040404;
+        }
+
+        .login-container input,
+        .login-container select {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .login-container button {
+            width: calc(100% - 40px);
+            padding: 10px 25px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box .icon {
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            color: #000000;
+        }
+
+        .input-box input {
+            padding-left: 35px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .login-container {
+                width: 100%;
+            }
+
+            .login-container input,
+            .login-container select,
+            .login-container button {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h3>REGISTER</h3>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" id="username" name="username" placeholder="Enter your name" required>
+            </div>
+            <label for="mobile">Mobile Number</label>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                <input type="text" id="mobile" name="mobile" placeholder="Enter your number" required>
+            </div>
+            <label for="email">Email</label>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input type="email" id="email" name="email" placeholder="Enter email ID" required>
+            </div>
+            <label for="city">CITY:</label>
+            <select id="city" name="city" required>
+                <option value="" disabled selected>Select your city</option>
+                <option value="anantapur">Anantapur</option>
+                <option value="chittoor">Chittoor</option>
+                <option value="east_godavari">East Godavari</option>
+                <option value="guntur">Guntur</option>
+                <option value="krishna">Krishna</option>
+                <option value="kurnool">Kurnool</option>
+                <option value="nellore">Nellore</option>
+                <option value="prakasam">Prakasam</option>
+                <option value="srikakulam">Srikakulam</option>
+                <option value="visakhapatnam">Visakhapatnam</option>
+                <option value="vizianagaram">Vizianagaram</option>
+                <option value="west_godavari">West Godavari</option>
+                <option value="ysr_kadapa">YSR Kadapa</option>
+            </select>
+            <label for="pincode">Pincode</label>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="location-outline"></ion-icon></span>
+                <input type="text" id="pincode" name="pincode" placeholder="Enter the pincode" required>
+            </div>
+            <div id="error-message" class="error" aria-live="polite"></div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value.trim();
+            var mobile = document.getElementById('mobile').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var city = document.getElementById('city').value;
+            var pincode = document.getElementById('pincode').value.trim();
+            var errorMessage = document.getElementById('error-message');
+
+            var mobilePattern = /^[6-9]\d{9}$/;
+            var pincodePattern = /^\d{6}$/;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!username || !mobile || !email || !city || !pincode) {
+                errorMessage.textContent = 'All fields are required.';
+                return;
+            }
+
+            if (!mobilePattern.test(mobile)) {
+                errorMessage.textContent = 'Invalid mobile number format.';
+                return;
+            }
+
+            if (!emailPattern.test(email)) {
+                errorMessage.textContent = 'Invalid email format.';
+                return;
+            }
+
+            if (!pincodePattern.test(pincode)) {
+                errorMessage.textContent = 'Invalid pincode format.';
+                return;
+            }
+
+            errorMessage.textContent = '';
+
+            console.log('Username:', username);
+            console.log('Mobile Number:', mobile);
+            console.log('Email:', email);
+            console.log('City:', city);
+            console.log('Pincode:', pincode);
+
+            alert('Registration successful!');
+        });
+    </script>
+
+</body>
+
+</html>

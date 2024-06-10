@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Pages</title>
+ <style>
+    body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url("Img2.jpg");
+    background-size: cover;
+    position: relative;
+    font-family: Arial, sans-serif; 
+}
+.glass-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 40px;
+    text-align: center;
+    margin: 100px auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+.glass-container input[type="text"],
+.glass-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s;
+}
+.glass-container input[type="text"]:hover,
+.glass-container textarea:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+.glass-container button {
+    background-color: greenyellow;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+}
+.glass-container button:hover {
+    background-color: lightgreen;
+    transform: scale(1.05); 
+}
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+ </style>
+
+</head>
+<body>
+    <video src="Background group people network icon link connection technology loop animation 4k.mp4" autoplay muted loop></video>
+    <nav>
+        <ul>
+            <li><a id="Home" href="UI Home page3.html">Home</a></li>
+        </ul>
+    </nav>
+    <div class="glass-container">
+        <h1>CONTACT US</h1>
+        <form name="myform" action="UI Home page3.html" onsubmit="return loginvalidation()">
+            Full Name:<br>
+            <input type="text" name="fullname" placeholder="Full Name"><br><br>
+            Phone Number:<br>
+            <input type="text" name="phno" placeholder="PH Number"><br><br>
+            Email:<br>
+            <input type="text" name="email" placeholder="Email"><br><br>
+            Any Queries:<br>
+            <textarea name="mytest" height="20" width="35" placeholder="100 characters only"></textarea><br><br>
+            <button type="submit"><a href="http://127.0.0.1:5500/contact2.html">Submit</a></button>
+        </form>
+    </div>
+    <script>
+        function loginvalidation() {
+            var fullname = document.myform.fullname.value;
+            var phno = document.myform.phno.value;
+            var messge = document.myform.mytest.value;
+            var myemail = document.myform.email.value;
+            var atposition = myemail.indexOf("@");
+            var dotposition = myemail.lastIndexOf(".");
+            
+           if (fullname == null || fullname == "") {
+                alert("Please enter name");
+                return false;
+            } else if (phno.length < 10) {
+                alert("Phone number should have minimum 10 digits");
+                return false;
+            } 
+            else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= myemail.length){
+                alert("Please enter a valid e-mail address"); 
+                return false; 
+            }
+            else if (messge == "") {
+                alert("Message box is empty");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

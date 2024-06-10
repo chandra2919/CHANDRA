@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Living</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .ab {
+            background-color: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(10px);
+            width: 100%;
+            height: auto;
+            text-align: center;
+            font-size: 25px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px; 
+            border-left: 5px solid black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        a {
+            color: #333; 
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #6a6666;
+            background-color: rgba(65, 61, 61, 0.3); 
+            border: 1px solid lightgreen; 
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: rgb(44, 40, 40);
+        }
+
+        .ab img {
+            width: 120px;
+            height: auto;
+            padding: 12px 50px; 
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+
+        li {
+            margin: 10px; 
+        }
+
+        li a {
+            display: block;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        li a:hover {
+            background-color: rgba(255, 255, 255, 0.3); 
+        }
+
+        .info-box {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            z-index: 1;
+        }
+
+        .pictures-row {
+            position: relative;
+            z-index: 2;
+            margin-top: 300px; /* Adjusted to move down */
+            column-gap: 20px; /* Added column gap */
+            row-gap: 25px; /* Added row gap */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-box {
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: relative;
+            width: 280px; /* Adjusted width */
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: bold; /* Made the name bolder */
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(10px); /* Added glass effect */
+            padding: 5px 8px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .pictures-row img {
+            width: 100%;
+            height: 300px; /* Increased height for images */
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+        }
+
+        .btn-explore {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn-visit {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 767px) {
+            .ab {
+                font-size: 20px; 
+            }
+
+            .ab img {
+                width: 100px;
+                padding: 12px 30px;
+            }
+
+            li {
+                margin: 5px;
+            }
+
+            .info-box {
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            .product-box {
+                height: auto; /* Remove fixed height for smaller screens */
+            }
+
+            .pictures-row img {
+                height: auto; /* Adjust image height for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="ab">
+    <img src="Screenshot 2024-05-29 134449.png" alt="Logo">
+    <ul>
+        <li><a href="http://127.0.0.1:5500/INFO.html">INFO</a></li>
+        <li><a href="http://127.0.0.1:5500/register.html">REGISTER</a></li>
+        <li><a href="http://127.0.0.1:5500/mainlogin.html">LOGIN</a></li>
+        <li><a href="https://www.bigbasket.com/cl/fruits-vegetables/">VEGGIES</a></li>
+        <li><a href="http://127.0.0.1:5500/CONTACT-US.html">CONTACT-US</a></li>
+    </ul>
+</div>
+
+<video src="Fruits Vegetables Spices 4K Ultra HD (UHD) Video - Resolution 3840x2160.mp4" autoplay muted loop></video>
+
+<marquee behavior="bounce" direction="right" scrollamount="20">
+    <h1>EAT HEALTHY FOOD TO LIVE HEALTHY</h1>
+</marquee>
+
+
+<div class="container-fluid pictures-row">
+    <h2 class="text-center text-white font-weight-bold">POPULAR INTEGRATED WEBSITES</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-name">BigBasket</div> <!-- Name outside the product-box -->
+            <div class="product-box">
+                <img src="Bigbasket-image.jpg" alt="BigBasket">
+                <a href="https://www.bigbasket.com/" class="btn-explore">Explore</a>
+                <a href="https://www.bigbasket.com/" class="btn-visit">Visit</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-name">Fresh Farmers</div> <!-- Name outside the product-box -->
+            <div class="product-box">
+                <img src="FRESH FARMERS.jpeg" alt="Fresh Farmers">
+                <a href="https://freshfarmers.com/" class="btn-explore">Explore</a>
+                <a href="https://freshfarmers.com/" class="btn-visit">Visit</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-name">Amazon</div> <!-- Name outside the product-box -->
+            <div class="product-box">
+                <img src="amazon.jpeg" alt="Amazon">
+                <a href="https://www.amazon.com/" class="btn-explore">Explore</a>
+                <a href="https://www.amazon.com/" class="btn-visit">Visit</a>
+            </div>
+            <div class="container-fluid pictures-row1">
+            <div class="row1">
+            
+        </div>
+        <div class="col-md-4">
+            <div class="product-name">Flipkart</div> <!-- Name outside the product-box -->
+            <div class="product-box">
+                <img src="flipkart1.jpeg" alt="Flipkart">
+                <a href="https://www.flipkart.com/" class="btn-explore">Explore</a>
+                <a href="https://www.flipkart.com/" class="btn-visit">Visit</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-name">Veg Ease</div> <!-- Name outside the product-box -->
+            <div class="product-box">
+                <img src="veg ease 1.png" alt="Veg Ease">
+                <a href="https://www.vegease.com/" class="btn-explore">Explore</a>
+                <a href="https://www.vegease.com/" class="btn-visit">Visit</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-name">Jio Mart</div> <!-- Name outside the product-box -->
+            <div class="product-box">
+                <img src="jio mart.jpeg" alt="Jio Mart">
+                <a href="https://www.jiomart.com/" class="btn-explore">Explore</a>
+                <a href="https://www.jiomart.com/" class="btn-visit">Visit</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="info-box">
+    <p>Buying fresh vegetables and fruits is an essential part of maintaining a healthy lifestyle. Fresh produce is packed with vitamins, minerals, and antioxidants that are crucial for our overall well-being. When selecting vegetables and fruits, look for items that are vibrant in color, as this is often a sign of high nutrient content. Avoid produce with spots or blemishes, as these can indicate over-ripeness or spoilage.</p>
+    <p>It's also important to consider the source of your produce. Locally grown fruits and vegetables often have a shorter time from farm to table, ensuring they retain more of their nutritional value. Additionally, purchasing from local farmers supports the community and reduces the carbon footprint associated with transporting goods over long distances.</p>
+    <p>Incorporating a variety of fresh vegetables and fruits into your diet can help prevent chronic diseases such as heart disease, diabetes, and certain cancers. They also aid in maintaining a healthy weight and improving digestive health. By prioritizing fresh produce, you can enjoy delicious and nutritious meals that contribute to your overall health and well-being.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
